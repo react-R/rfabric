@@ -31,21 +31,21 @@ if (typeof Object.assign != 'function') {
   });
 }
 
-function RatingInput(_ref) {
+function CheckboxInput(_ref) {
   var configuration = _ref.configuration || {},
       value = _ref.value,
       setValue = _ref.setValue;
-  return React.createElement(Fabric.Rating,
+  return React.createElement(Fabric.Checkbox,
     Object.assign(
       configuration,
       {
         onChange: function (evt, rating) {
           return setValue(rating);
         },
-        rating: value
+        checked: value
       }
     )
   );
 };
 
-reactR.reactShinyInput('.faRating', 'rfabric.faRating', RatingInput);
+reactR.reactShinyInput('.faCheckbox', 'rfabric.faCheckbox', CheckboxInput);

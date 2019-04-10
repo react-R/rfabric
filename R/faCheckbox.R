@@ -1,9 +1,9 @@
-#' Shiny Rating Input
+#' Shiny Checkbox Input
 #'
 #' Input to provide an interface for a user to rate something often indicated by a star
 #'
 #' @param inputId \code{character} id for the input
-#' @param default \code{integer} value for the initial rating value
+#' @param default \code{logical} value for the initial checkbox value
 #'
 #' @return \code{shiny input}
 #'
@@ -12,17 +12,17 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-faRatingInput <- function(inputId, default = NULL) {
+faCheckboxInput <- function(inputId, default = FALSE) {
   reactR::createReactShinyInput(
     inputId,
-    "faRating",
+    "faCheckbox",
     list(
       htmltools::htmlDependency(
-        name = "faRating",
+        name = "faCheckbox",
         version = "1.0.0",
         src = "www/rfabric",
         package = "rfabric",
-        script = "faRating.js"
+        script = "faCheckbox.js"
       ),
       roffice:::roffice_deps()
     ),
@@ -32,17 +32,17 @@ faRatingInput <- function(inputId, default = NULL) {
   )
 }
 
-#' Update Shiny Rating Input
+#' Update Shiny Checkbox Input
 #'
-#' Allow changing or updating the configuration or value of a shiny rating input.
+#' Allow changing or updating the configuration or value of a shiny checkbox input.
 #'
 #' @param session Shiny session
-#' @param inputId \code{character} name/id for the shiny input rating to change
+#' @param inputId \code{character} name/id for the shiny input checkbox to change
 #' @param value \code{integer} value to assign
-#' @param configuration \code{list} of 'props' to change the rating
+#' @param configuration \code{list} of 'props' to change the checkbox
 #'
 #' @export
-updateFaRatingInput <- function(session, inputId, value = NULL, configuration = NULL) {
+updateFaCheckboxInput <- function(session, inputId, value = NULL, configuration = NULL) {
   message <- list(value = value)
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);

@@ -2,9 +2,13 @@ library(shiny)
 library(officeInputs)
 
 ui <- fluidPage(
-  titlePanel("reactR Rating Example"),
+  titlePanel("rfabric reactR Shiny Inputs Example"),
+  # rating
   faRatingInput("rating"),
-  textOutput("textOutput")
+  textOutput("ratingOutput"),
+  # checkbox
+  faCheckboxInput("checkbox"),
+  textOutput("checkboxOutput")
 )
 
 server <- function(input, output, session) {
@@ -15,8 +19,11 @@ server <- function(input, output, session) {
     value = 5,
     configuration = list(max=10)
   )
-  output$textOutput <- renderText({
+  output$ratingOutput <- renderText({
     sprintf("You entered: %s", input$rating)
+  })
+  output$checkboxOutput <- renderText({
+    sprintf("You entered: %s", input$checkbox)
   })
 }
 

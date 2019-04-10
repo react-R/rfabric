@@ -4,7 +4,8 @@
 \alias{updateFaRatingInput}
 \title{Update Shiny Rating Input}
 \usage{
-updateFaRatingInput(session, inputId, value, configuration = NULL)
+updateFaRatingInput(session, inputId, value = NULL,
+  configuration = NULL)
 }
 \arguments{
 \item{session}{Shiny session}
