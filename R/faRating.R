@@ -39,7 +39,7 @@ faRatingInput <- function(inputId, default = "") {
 #' @param configuration \code{list} of 'props' to change the rating
 #'
 #' @export
-updateFaRatingInput <- function(session, inputId, value, configuration = NULL) {
+updateFaRatingInput <- function(session, inputId, value = NULL, configuration = NULL) {
   message <- list(value = value)
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);
