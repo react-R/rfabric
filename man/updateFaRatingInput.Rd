@@ -2,10 +2,19 @@
 % Please edit documentation in R/faRating.R
 \name{updateFaRatingInput}
 \alias{updateFaRatingInput}
-\title{<Add Title>}
+\title{Update Shiny Rating Input}
 \usage{
 updateFaRatingInput(session, inputId, value, configuration = NULL)
 }
+\arguments{
+\item{session}{Shiny session}
+
+\item{inputId}{\code{character} name/id for the shiny input rating to change}
+
+\item{value}{\code{integer} value to assign}
+
+\item{configuration}{\code{list} of 'props' to change the rating}
+}
 \description{
-<Add Description>
+Allow changing or updating the configuration or value of a shiny rating input.
 }

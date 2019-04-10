@@ -1,6 +1,8 @@
-#' <Add Title>
+#' Shiny Rating Input
 #'
-#' <Add Description>
+#' Input to provide an interface for a user to rate something often indicated by a star
+#'
+#' @return \code{shiny input}
 #'
 #' @importFrom shiny restoreInput
 #' @importFrom reactR createReactShinyInput
@@ -27,9 +29,14 @@ faRatingInput <- function(inputId, default = "") {
   )
 }
 
-#' <Add Title>
+#' Update Shiny Rating Input
 #'
-#' <Add Description>
+#' Allow changing or updating the configuration or value of a shiny rating input.
+#'
+#' @param session Shiny session
+#' @param inputId \code{character} name/id for the shiny input rating to change
+#' @param value \code{integer} value to assign
+#' @param configuration \code{list} of 'props' to change the rating
 #'
 #' @export
 updateFaRatingInput <- function(session, inputId, value, configuration = NULL) {

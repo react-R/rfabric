@@ -2,10 +2,13 @@
 % Please edit documentation in R/faRating.R
 \name{faRatingInput}
 \alias{faRatingInput}
-\title{<Add Title>}
+\title{Shiny Rating Input}
 \usage{
 faRatingInput(inputId, default = "")
 }
+\value{
+\code{shiny input}
+}
 \description{
-<Add Description>
+Input to provide an interface for a user to rate something often indicated by a star
 }
