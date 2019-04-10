@@ -3,13 +3,13 @@ library(officeInputs)
 
 ui <- fluidPage(
   titlePanel("reactR Rating Example"),
-  offRatingInput("rating"),
+  faRatingInput("rating"),
   textOutput("textOutput")
 )
 
 server <- function(input, output, session) {
   # demo update functionality even though not much purpose here
-  updateOffRatingInput(
+  updateFaRatingInput(
     session = session,
     inputId = "rating",
     value = 5,

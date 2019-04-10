@@ -7,17 +7,17 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-offRatingInput <- function(inputId, default = "") {
+faRatingInput <- function(inputId, default = "") {
   reactR::createReactShinyInput(
     inputId,
-    "OffRating",
+    "faRating",
     list(
       htmltools::htmlDependency(
-        name = "offRating-input",
+        name = "faRating",
         version = "1.0.0",
-        src = "www/officeInputs/offRating",
-        package = "officeInputs",
-        script = "offRating.js"
+        src = "www/rfabric",
+        package = "rfabric",
+        script = "faRating.js"
       ),
       roffice:::roffice_deps()
     ),
@@ -32,7 +32,7 @@ offRatingInput <- function(inputId, default = "") {
 #' <Add Description>
 #'
 #' @export
-updateOffRatingInput <- function(session, inputId, value, configuration = NULL) {
+updateFaRatingInput <- function(session, inputId, value, configuration = NULL) {
   message <- list(value = value)
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);

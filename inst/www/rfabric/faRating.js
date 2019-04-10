@@ -48,4 +48,4 @@ var RatingInput = function PickerInput(_ref) {
   );
 };
 
-reactR.reactShinyInput('.OffRating', 'officeInputs.OffRating', RatingInput);
+reactR.reactShinyInput('.faRating', 'rfabric.faRating', RatingInput);

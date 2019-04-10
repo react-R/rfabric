@@ -1,5 +1,5 @@
-Package: officeInputs
-Title: What the Package Does (One Line, Title Case)
+Package: rfabric
+Title: Shiny Inputs from Office UI Fabric React
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
@@ -16,3 +16,4 @@ Imports:
     reactR
 Remotes:
     react-R/roffice
+RoxygenNote: 6.1.1
