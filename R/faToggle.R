@@ -13,7 +13,7 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-faToggleInput <- function(inputId, default = NULL, configuration = NULL ) {
+faToggleInput <- function(inputId, default = TRUE, configuration = NULL ) {
   reactR::createReactShinyInput(
     inputId,
     "faToggle",

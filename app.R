@@ -7,19 +7,21 @@ ui <- fluidPage(
   # rating
   faRatingInput("rating"),
   textOutput("ratingOutput"),
-  # # checkbox
-  # faCheckboxInput("checkbox"),
-  # textOutput("checkboxOutput"),
+  faToggleInput("toggle", default=TRUE),
+  textOutput("toggleOutput"),
+  faToggleInput("toggle2"),
+  textOutput("toggle2Output"),
+  # checkbox
+  faCheckboxInput("checkbox"),
+  textOutput("checkboxOutput")
   # spinbutton not working as expected; waiting on onChange handler
-  faSpinbuttonInput("spinbutton"),
-  textOutput("spinbuttonOutput"),
-  #slider not working; for some reason binding refers to other elements
+  # faSpinbuttonInput("spinbutton"),
+  # textOutput("spinbuttonOutput"),
+  # slider not working; for some reason binding refers to other elements
   # faSliderInput("slider"),
   # textOutput("sliderOutput"),
   # faSliderInput("slider2"),
   # textOutput("slider2Output")
-  faToggleInput("toggle"),
-  textOutput("toggleOutput")
 )
 
 server <- function(input, output, session) {
@@ -33,21 +35,24 @@ server <- function(input, output, session) {
   output$ratingOutput <- renderText({
     sprintf("You entered: %s", input$rating)
   })
+  output$toggleOutput <- renderText({
+    sprintf("You entered: %s", input$toggle)
+  })
+  output$toggle2Output <- renderText({
+    sprintf("You entered: %s", input$toggle2)
+  })
   output$checkboxOutput <- renderText({
     sprintf("You entered: %s", input$checkbox)
   })
-  output$spinbuttonOutput <- renderText({
-    sprintf("You entered: %s", input$spinbutton)
-  })
+  # output$spinbuttonOutput <- renderText({
+  #   sprintf("You entered: %s", input$spinbutton)
+  # })
   # output$sliderOutput <- renderText({
   #   sprintf("You entered: %s", input$slider)
   # })
   # output$slider2Output <- renderText({
   #   sprintf("You entered: %s", input$slider2)
   # })
-  output$toggleOutput <- renderText({
-    sprintf("You entered: %s", input$toggle)
-  })
 }
 
 shinyApp(ui, server)

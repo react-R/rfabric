@@ -13,7 +13,7 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-faCheckboxInput <- function(inputId, default = FALSE, configuration = list()) {
+faCheckboxInput <- function(inputId, default = FALSE, configuration = NULL) {
   reactR::createReactShinyInput(
     inputId,
     "faCheckbox",
