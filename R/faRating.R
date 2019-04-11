@@ -4,6 +4,7 @@
 #'
 #' @param inputId \code{character} id for the input
 #' @param default \code{integer} value for the initial rating value
+#' @param configuration \code{list} of initial 'props' for the rating input
 #'
 #' @return \code{shiny input}
 #'
@@ -12,7 +13,7 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-faRatingInput <- function(inputId, default = NULL) {
+faRatingInput <- function(inputId, default = NULL, configuration = list()) {
   reactR::createReactShinyInput(
     inputId,
     "faRating",
@@ -27,7 +28,7 @@ faRatingInput <- function(inputId, default = NULL) {
       roffice:::roffice_deps()
     ),
     default,
-    list(),
+    configuration,
     htmltools::tags$div
   )
 }

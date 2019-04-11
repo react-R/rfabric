@@ -4,12 +4,14 @@
 \alias{faRatingInput}
 \title{Shiny Rating Input}
 \usage{
-faRatingInput(inputId, default = NULL)
+faRatingInput(inputId, default = NULL, configuration = list())
 }
 \arguments{
 \item{inputId}{\code{character} id for the input}
 
 \item{default}{\code{integer} value for the initial rating value}
+
+\item{configuration}{\code{list} of initial 'props' for the rating input}
 }
 \value{
 \code{shiny input}

@@ -4,12 +4,14 @@
 \alias{faCheckboxInput}
 \title{Shiny Checkbox Input}
 \usage{
-faCheckboxInput(inputId, default = FALSE)
+faCheckboxInput(inputId, default = FALSE, configuration = list())
 }
 \arguments{
 \item{inputId}{\code{character} id for the input}
 
 \item{default}{\code{logical} value for the initial checkbox value}
+
+\item{configuration}{\code{list} of initial 'props' for the checkbox input}
 }
 \value{
 \code{shiny input}
