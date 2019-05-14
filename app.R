@@ -1,3 +1,5 @@
+#devtools::install_github("react-R/rfabric")
+
 library(shiny)
 library(reactR)
 library(rfabric)
@@ -7,13 +9,18 @@ ui <- fluidPage(
   # rating
   faRatingInput("rating"),
   textOutput("ratingOutput"),
+  faRatingInput("rating2"),
+  textOutput("rating2Output"),
+  # toggle
   faToggleInput("toggle", default=TRUE),
   textOutput("toggleOutput"),
-  faToggleInput("toggle2"),
+  faToggleInput("toggle2", default=FALSE),
   textOutput("toggle2Output"),
   # checkbox
   faCheckboxInput("checkbox"),
-  textOutput("checkboxOutput")
+  textOutput("checkboxOutput"),
+  faCheckboxInput("checkbox2"),
+  textOutput("checkbox2Output")
   # spinbutton not working as expected; waiting on onChange handler
   # faSpinbuttonInput("spinbutton"),
   # textOutput("spinbuttonOutput"),
@@ -35,6 +42,9 @@ server <- function(input, output, session) {
   output$ratingOutput <- renderText({
     sprintf("You entered: %s", input$rating)
   })
+  output$rating2Output <- renderText({
+    sprintf("You entered: %s", input$rating2)
+  })
   output$toggleOutput <- renderText({
     sprintf("You entered: %s", input$toggle)
   })
@@ -43,6 +53,9 @@ server <- function(input, output, session) {
   })
   output$checkboxOutput <- renderText({
     sprintf("You entered: %s", input$checkbox)
+  })
+  output$checkbox2Output <- renderText({
+    sprintf("You entered: %s", input$checkbox2)
   })
   # output$spinbuttonOutput <- renderText({
   #   sprintf("You entered: %s", input$spinbutton)
